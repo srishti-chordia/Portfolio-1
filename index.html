@@ -4,30 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Srishti Chordia | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #ffffff;
-      --text-color: #1a1a1a;
-      --accent: #0077ff;
-    }
-
-    body.dark {
-      --bg-color: #1a1a1a;
-      --text-color: #ffffff;
-      --accent: #66ccff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      --bg-light: #f9f9f9;
+      --bg-dark: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #f0f0f0;
+      --primary: #005f73;
+      --secondary: #94d2bd;
     }
 
     body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
     }
 
     header {
@@ -35,75 +33,83 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 3rem;
-      background-color: var(--bg-color);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background-color: var(--primary);
+      color: white;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
 
     header h1 {
       font-size: 1.5rem;
-      color: var(--accent);
     }
 
     nav a {
-      margin-left: 1.5rem;
+      margin-left: 2rem;
       text-decoration: none;
-      color: var(--text-color);
+      color: white;
       font-weight: 500;
-      transition: 0.3s;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--secondary);
     }
 
     .toggle-theme {
-      cursor: pointer;
-      background: var(--accent);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      border: none;
       margin-left: 2rem;
+      background: var(--secondary);
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     section {
-      padding: 4rem 2rem;
       max-width: 900px;
       margin: auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
     }
 
     #hero {
       text-align: center;
+      margin-top: 2rem;
     }
 
     #hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      color: var(--primary);
     }
 
     #hero p {
       font-size: 1.1rem;
-      color: gray;
+      color: #666;
     }
 
-    .section-title {
-      font-size: 1.8rem;
+    .project, .achievement {
+      background-color: #ffffff;
+      padding: 1.5rem;
       margin-bottom: 1.5rem;
-      color: var(--accent);
+      border-left: 6px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    .project {
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
+    body.dark .project, body.dark .achievement {
+      background-color: #2c2c2c;
     }
 
-    .project h3 {
+    .project h3, .achievement h3 {
       margin-bottom: 0.4rem;
+      color: var(--primary);
     }
 
     form input, form textarea {
@@ -111,17 +117,17 @@
       margin: 0.5rem 0;
       padding: 0.8rem;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      background: var(--bg-color);
-      color: var(--text-color);
+      border-radius: 6px;
+      background: #fff;
+      color: #000;
     }
 
     form button {
-      background: var(--accent);
+      background: var(--primary);
       color: white;
       padding: 0.7rem 1.5rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       margin-top: 0.5rem;
       cursor: pointer;
     }
@@ -129,52 +135,95 @@
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #f0f0f0;
-      color: #555;
+      background-color: #eaeaea;
+      font-size: 0.9rem;
     }
 
     body.dark footer {
-      background-color: #111;
-      color: #aaa;
+      background-color: #121212;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Srishti</h1>
+    <h1>Srishti Chordia</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
       <button class="toggle-theme">Toggle Theme</button>
     </nav>
   </header>
 
   <section id="hero">
-    <h2>Hello, I'm Srishti Chordia</h2>
-    <p>AI Researcher • Full Stack Developer • SWE Associate Director</p>
+    <h2>AI Researcher • Developer • Innovator</h2>
+    <p>Passionate about building impactful, intelligent systems for real-world challenges.</p>
   </section>
 
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <p>
-      I'm passionate about using AI and technology to create real-world impact. My work ranges from healthcare (GDM Predictor, Mental Health Analysis) to social good (Cyberbullying Detection) and precision agriculture using AIoT.
+      I am a final-year Computer Science student with a strong foundation in Artificial Intelligence, Machine Learning, and Full-Stack Development. I have a proven track record of leveraging technology to solve societal and industry problems—ranging from healthcare and agriculture to mental wellness and online safety.
+      <br><br>
+      As a researcher and developer, I’ve presented at international conferences, published in IEEE Xplore, and led award-winning hackathon teams. I'm now seeking roles where I can contribute to cutting-edge projects in AI, data science, or intelligent systems, while continuing to grow as a builder and problem-solver.
     </p>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects</h2>
+
     <div class="project">
-      <h3>Cyberbullying Detection (6-Class NLP)</h3>
-      <p>Built with NLP and ML, this tool detects different types of cyberbullying, including cyberstalking, doxing, and revenge porn, with a Chrome Extension frontend.</p>
+      <h3>Cyberbullying Detection System (6-Class NLP Model)</h3>
+      <p>
+        An advanced NLP-based system that classifies social media content into six categories like cyberstalking, doxing, and sexual harassment. Includes a Chrome Extension that highlights harmful content in real time. Utilized LSTM, SVM, and ensemble learning with back-translation augmentation.
+      </p>
     </div>
+
     <div class="project">
-      <h3>Mental Health Prediction</h3>
-      <p>Analyzes workplace mental health based on environmental and personal factors using classification models.</p>
+      <h3>Mental Health Prediction in the Workplace</h3>
+      <p>
+        Machine Learning model predicting mental health issues using workplace attributes like environment, supervisor relationships, and working hours. Visualized results with confusion matrices and ROC curves.
+      </p>
     </div>
+
     <div class="project">
       <h3>AIoT-Based Smart Agriculture System</h3>
-      <p>Combines sensors, ML, and autonomous robotics to optimize crop yield and resource efficiency.</p>
+      <p>
+        Integrated IoT sensors, ML models, and autonomous robotics to optimize water usage, detect crop diseases, and monitor soil in real-time. Aimed at increasing yield and sustainability in rural farming.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Gestational Diabetes Mellitus (GDM) Predictor</h3>
+      <p>
+        A Flask-based web app that predicts GDM in expecting mothers using SVM, MLP, Random Forest, and Logistic Regression models. Trained on real-world datasets for high accuracy in early risk assessment.
+      </p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievement">
+      <h3>🏆 1st Place - HACKRUSH 1.0 (AgriTech Track)</h3>
+      <p>
+        Won the AgriTech track at HACKRUSH 1.0 with a team-developed autonomous smart farming solution integrating AIoT and ML.
+      </p>
+    </div>
+
+    <div class="achievement">
+      <h3>📄 IEEE Research Paper - YOLO-Based Food Damage Detection</h3>
+      <p>
+        Published in IEEE Xplore, presented at the 8th I-SMAC 2024 Conference. Proposed a YOLOv5-based approach to automate food quality assessment in the supply chain.
+      </p>
+    </div>
+
+    <div class="achievement">
+      <h3>📄 NLP Paper - Cyberbullying Detection using Stack Ensemble Learning</h3>
+      <p>
+        Presented at NCICIS 2025 under Dr. Akilandeswari P. The paper reviewed multiple NLP-based models and proposed a Stack Ensemble method for improved multi-class cyberbullying classification.
+      </p>
     </div>
   </section>
 
